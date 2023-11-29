@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, StyledEngineProvider, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Navbar from "./scenes/global/Navbar";
 
@@ -9,11 +9,13 @@ function App() {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <StyledEngineProvider injectFirst>
           <div className="app">
             <main className="content">
                 <Navbar />
             </main>
           </div>
+          </StyledEngineProvider>
         </ThemeProvider>
       </ColorModeContext.Provider>
     </>
